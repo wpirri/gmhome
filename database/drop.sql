@@ -1,0 +1,24 @@
+DROP TABLE historico;
+DROP TABLE testigo;
+DROP TABLE vinculo;
+DROP TABLE persona;
+DROP TABLE pais;
+DROP TABLE tarea_programada;
+DROP SEQUENCE tarea_programada_seq;
+DROP TABLE home_config;
+DROP TABLE auto_event;
+DROP TABLE autoactivacion;
+DROP TABLE event;
+DROP SEQUENCE event_seq;
+DROP TABLE home_flag;
+DROP TABLE comando;
+DROP TABLE group_rel;
+DROP TABLE group_list;
+DROP SEQUENCE group_list_seq;
+DROP TABLE assign;
+DROP TABLE devconf;
+DROP TABLE device;
+DROP TABLE product_access;
+DROP SEQUENCE product_access_seq;
+DROP TABLE access_string;
+

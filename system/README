@@ -1,0 +1,30 @@
+README - HomeCtrl y HomeTask
+===============================================================================
+HomeCtrl y HomeTask dentro del sistema Gnu-MHome (gmhome) son los módulos
+encargados de ejecutar las tareas programadas como respuesta a eventos
+capturados por el sistema o que hayan sido programados para ejecutarse en un
+momento determinado. Los primeros pueden ser como respuesta a un solo evento
+externo, a estos los llamaremos simplemente EVENTOS o como respuesta a una
+suseción de eventos externos previamente programados que llamaremos EVENTOS
+COMPUESTOS. En el otro grupo tenemos las tereas programadas para ejecutarse a
+cierta hora, ciertos dias y las llamamos TAREAS PROGRAMADAS.
+
+EVENTOS
+-------------------------------------------------------------------------------
+Para esta funcionalidad el server se suscribe al mensaje "port-change" por
+medio del cual recibe informacion de cada cambio de estado de cada elemento
+analógico o digital que esté conctado al sistema.
+Cada vez que recibe una notificación por el mensaje suscripto realiza una
+consulta a la tabla 
+
+
+EVENTOS COMPUESTOS
+-------------------------------------------------------------------------------
+
+
+
+TAREAS PROGRAMADAS
+-------------------------------------------------------------------------------
+
+
+

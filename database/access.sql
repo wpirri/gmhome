@@ -1,0 +1,24 @@
+GRANT SELECT, INSERT, UPDATE, DELETE ON access_string      TO home;
+GRANT SELECT, INSERT, UPDATE, DELETE ON product_access     TO home;
+GRANT SELECT, INSERT, UPDATE, DELETE ON device             TO home;
+GRANT SELECT, INSERT, UPDATE, DELETE ON devconf            TO home;
+GRANT SELECT, INSERT, UPDATE, DELETE ON assign             TO home;
+GRANT SELECT, INSERT, UPDATE, DELETE ON group_list         TO home;
+GRANT SELECT, INSERT, UPDATE, DELETE ON group_rel          TO home;
+GRANT SELECT, INSERT, UPDATE, DELETE ON comando            TO home;
+GRANT SELECT, INSERT, UPDATE, DELETE ON event              TO home;
+GRANT SELECT, INSERT, UPDATE, DELETE ON autoactivacion     TO home;
+GRANT SELECT, INSERT, UPDATE, DELETE ON auto_event         TO home;
+GRANT SELECT, INSERT, UPDATE, DELETE ON home_config        TO home;
+GRANT SELECT, INSERT, UPDATE, DELETE ON home_flag          TO home;
+GRANT SELECT, INSERT, UPDATE, DELETE ON tarea_programada   TO home;
+GRANT SELECT, INSERT, UPDATE, DELETE ON pais               TO home;
+GRANT SELECT, INSERT, UPDATE, DELETE ON persona            TO home;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vinculo            TO home;
+GRANT SELECT, INSERT, UPDATE, DELETE ON testigo            TO home;
+GRANT SELECT, INSERT, UPDATE, DELETE ON historico          TO home;
+GRANT ALL                            ON event_seq          TO home;
+GRANT ALL                            ON group_list_seq     TO home;
+GRANT ALL                            ON product_access_seq TO home;
+GRANT ALL                            ON persona_seq        TO home;
+

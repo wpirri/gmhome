@@ -1,0 +1,56 @@
+
+Gnu-MyHome
+===============================================================================
+
+Configuración
+=============-.
+./configure --prefix=/usr --sysconfdir=/etc/sysconfig --localstatedir=/var
+
+
+Compilación e instalación
+=========================-.
+make
+make install
+
+
+Compilación e instalación parcial
+=================================-.
+
+Para instalar solamente el server:
+  make build-server
+  make install-server
+
+Para instalar solamente el cliente:
+  make build-client
+  make install-client
+
+
+CVS
+===-.
+  Acceso anónimo:
+    cvs -d:pserver:anonymous@gnu-mhome.cvs.sourceforge.net:/cvsroot/gnu-mhome login
+    cvs -z3 -d:pserver:anonymous@gnu-mhome.cvs.sourceforge.net:/cvsroot/gnu-mhome co modulename
+
+  Acceso para desarrolladores:
+    export CVS_RSH=ssh
+    cvs -z3 -d:ext:developername@gnu-mhome.cvs.sourceforge.net:/cvsroot/gnu-mhome co modulename
+
+
+Kernel
+======-.
+  En sistemas donde es necesario levantar cierta cantidad de servidores pueden
+llegar a no ser suficiente la cantidad máxima de colas de mensajes permitidas
+por el sistema operativo. En el linux que usé para desarrollar el Monitor este
+valor era de 16.
+  Se calcula que la cantidad de colas necesarias para el funcionamiento del
+monitor debería ser por lo menos del doble de las instancias de servidores que
+se van a levantar y dos mas para el router, lo que me permitiría con esta
+configuración correr hasta siete instancias ya sean del mismo o de diferentes
+servidores.
+  De ser necesario utilizar sysctl(8) para corregir los parámetros del kernel
+modificando o agregando nuevos tokens (kernel.msgmni) en el archivo de
+configuración en /etc/sysctl.conf.
+===============================================================================
+                                               Proyecto original: Walter Pirri
+===============================================================================
+

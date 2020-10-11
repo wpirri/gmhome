@@ -1,0 +1,8 @@
+Instrucciones de instalacion
+===============================================================================
+
+./configure --prefix=/usr --sysconfdir=/etc/sysconfig --localstatedir=/var
+make
+make install
+
+IMPORTANTE: Agregar gmonitor (el usuario con el que corre el monitor transaccional al grupo dialout para que el server gmh_sercomm tenga acceso al puerto serie

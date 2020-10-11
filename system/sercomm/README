@@ -1,0 +1,24 @@
+README - SerComm
+===============================================================================
+  Este server gestiona la comunicación con los dispositivos de HardWare
+externo por medio del puerto serie, mantiene el estado de cada uno, genera las
+notificaciones a otros servers por cambios de estado y comunica a los
+dispositivos externos los comandos pedidos por el sistema.
+
+Servicio GMonitor
+-----------------
+sercmd-s1-bit-on-off: setea o resetea un bit de la salida 1
+            sintaxis: 
+                      sercmd-s1-bit-on-off:ddd sss bbb vvv
+                      ddd: Dispositivo, valores posibles 001 .. 254
+                      bbb: Bit, valores posibles         000 .. 007
+                      vvv: Valor, valores posibles       000 y 001
+sercmd-s2-bit-on-off: setea o resetea un bit de la salida 2
+            sintaxis: 
+                      sercmd-s1-bit-on-off:ddd sss bbb vvv
+                      ddd: Dispositivo, valores posibles 001 .. 254
+                      bbb: Bit, valores posibles         000 .. 007
+                      vvv: Valor, valores posibles       000 y 001
+serinf: Devuelve los estados de todas las entradas y salidas en el formato
+        "E1:nnn E2:nnn S1:nnn S2:nnn" donde nnn es un valor entre 000 y 255
+

@@ -1,0 +1,2 @@
+Arreglar server que cuando le llega un mensaje de loglevel se cuelga. OJO puede ser problema de la lib, pero con otros servers waited no pasa. Sale por error en la espera de mensajes.
+

@@ -1,0 +1,80 @@
+
+Gnu-MHome - UPS Monitor                              gnumhome@gnumonitor.com.ar
+===============================================================================
+El server gmh_svupsmon monitorea el estado de una UPS conectado al puerto serie
+del servidor local.
+El estado puede ser consultado por medio del servicio status_ups del tipo C/R.
+El servicio gmh_cliupsmon se encarga de las consultas a este servicio a
+intervalos regulares y actuar ejecutando un scrip conforme a los cambios de
+estado.
+
+Pin out del puerto serie
+
+ _______________________________________________________________________________________
+|       |        |        |       |         |          |                                |
+|DB-25  |  DB-9  |  Name  |  EIA  |  CCITT  |  DTE-DCE |  Description                   |
+|Pin #  |  Pin # |        |       |         |          |                                |
+|_______|________|________|_______|_________|__________|______________                  |
+|1      |        |  FG    |  AA   |  101    |  ---     | Frame Ground/Chassis GND       |
+|2      |  3     |  TD    |  BA   |  103    |  --->    | Transmitted Data, TxD          |
+|3      |  2     |  RD    |  BB   |  104    |  <---    |  Received Data, RxD            |
+|4      |  7     |  RTS   |  CA   |  105    |  --->    | Request To Send                |
+|5      |  8     |  CTS   |  CB   |  106    |  <---    |  Clear To Send                 |
+|6      |  6     |  DSR   |  CC   |  107    |  <---    |  Data Set Ready                |
+|7      |  5     |  SG    |  AB   |  102    |  ----    | Signal Ground, GND             |
+|8      |  1     |  DCD   |  CF   |  109    |  <---    |  Data Carrier Detect           |
+|9      |        |  --    |  --   |  -      |  -       | Positive DC test voltage       |
+|10     |        |  --    |  --   |  -      |  -       | Negative DC test voltage       |
+|11     |        |  QM    |  --   |  -      |  <---    |  Equalizer mode                |
+|12     |        |  SDCD  |  SCF  |  122    |  <---    |  Secondary Data Carrier Detect |
+|13     |        |  SCTS  |  SCB  |  121    |  <---    |  Secondary Clear To Send       |
+|14     |        |  STD   |  SBA  |  118    |  --->    | Secondary Transmitted Data     |
+|15     |        |  TC    |  DB   |  114    |  <---    |  Transmitter (signal) Clock    |
+|16     |        |  SRD   |  SBB  |  119    |  <---    |  Secondary Receiver Clock      |
+|17     |        |  RC    |  DD   |  115    |  --->    | Receiver (signal) Clock        |
+|18     |        |  DCR   |  --   |  -      |  <---    |  Divided Clock Receiver        |
+|19     |        |  SRTS  |  SCA  |  120    |  --->    | Secondary Request To Send      |
+|20     |  4     |  DTR   |  CD   |  108.2  |  --->    | Data Terminal Ready            |
+|21     |        |  SQ    |  CG   |  110    |  <---    |  Signal Quality Detect         |
+|22     |  9     |  RI    |  CE   |  125    |  <---    |  Ring Indicator                |
+|23     |        |  --    |  CH   |  111    |  --->    | Data rate selector             |
+|24     |        |  --    |  CI   |  112    |  <---    |  Data rate selector            |
+|25     |        |  TC    |  DA   |  113    |  <---    |  Transmitted Clock             |
+|_______|________|________|_______|_________|__________|________________________________|
+
+Cable UPS standar
+
+  PC (DB-25 Hembra)                      UPS (DB-25 Macho)
+
+     (GND)  1 o-----------------------------o 9    (GND)
+     (CTS)  5 o-----------------------------o 3    (UPS)
+     (DSR)  6 o-----------------------------o 6    (   )
+     (GND)  7 o-----------------------------o 4    (GND)
+     (DCD)  8 o-----------------------------o 5    (BAT)
+     (STR) 20 o-----------------------------o 1    (OFF)
+
+Adaptador UPS SENDON
+
+  PC (DB-25 Hembra)                      UPS (DB-9 Hembra)
+
+     (TXD)  3 o---------------------+--------o 4   (GND)
+                                    |
+                                    +--------o 7
+     (DTR)  4 o----------< 10K >-------------o 6   (OFF)
+     (CTS)  8 o-----+------------------------o 2   (UPS)
+                    |
+                   10K
+                    |
+     (RTS)  7 o-----+
+                    |
+                   10K
+                    |
+     (DCD)  1 o-----+------------------------o 5   (BAT)
+
+
+
+
+===============================================================================
+                                               Proyecto original: Walter Pirri
+===============================================================================
+

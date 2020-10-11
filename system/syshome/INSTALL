@@ -1,0 +1,7 @@
+Instrucciones de instalacion
+===============================================================================
+
+./configure --prefix=/usr --sysconfdir=/etc/sysconfig --localstatedir=/var
+make
+make install
+

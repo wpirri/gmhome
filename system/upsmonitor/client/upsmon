@@ -1,0 +1,25 @@
+#! /bin/sh
+
+#
+# Este script se encaga de leantar el demonio que interroga sobre el
+# estado de la ups a un server que corre dentro del sistema
+# GNU-Monitor.
+#
+
+case "$1" in
+	start)
+		echo "Starting upsmon..."
+		nohup /usr/sbin/gmh_cliupsmon -h 127.0.0.1 >/dev/null 2>&1 &
+	;;
+	stop)
+		echo "Stopping upsmon..."
+		killall /usr/sbin/gmh_cliupsmon
+	;;
+	restart)
+		$0 stop && $0 start
+	;;
+	*)
+		echo "Use: $0 start|stop|restart"
+	;;
+esac
+

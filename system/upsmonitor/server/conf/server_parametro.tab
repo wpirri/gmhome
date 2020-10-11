@@ -1,0 +1,7 @@
+# Tabla: server_parametro
+# server|parametro|valor
+gmh_svupsmon|-p|2
+#gmh_svupsmon|-u|CTS
+gmh_svupsmon|-u|DSR
+#gmh_svupsmon|-b|DCD
+

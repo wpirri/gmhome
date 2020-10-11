@@ -1,0 +1,6 @@
+README - HomeCtrl
+==============================================================================
+  Este modulo se encarga de generar acciones en base a eventos. Para cada
+evento informado por un dispositivo externo que el modulo SerComm convierte en
+"port-change" realiza una busqueda en la base de datos HOME tabla EVENT y de
+esta forma determina si se requiere realizar alguna acción.

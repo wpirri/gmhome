@@ -1,0 +1,18 @@
+#!/bin/sh
+
+case "$1" in
+	start)
+		logger "POWER-FAIL: Corte de energia, 3 minutos para shut-down"
+		nohup /sbin/shutdown -h -P +3 "Se ha producido un corte de energia electrica" >/dev/null 2>&1 &
+	;;
+	stop)
+		/sbin/shutdown -c "La energia electrica se ha reestablecido"
+		rm -f /etc/nologin
+		logger "POWER-FAIL: Energia reestablecida, shut-down cancelado"
+	;;
+	now)
+		logger "POWER_FAIL: Limite de carga de bateria, shut-down inmediato"
+		rm -f /etc/nologin
+		nohup /sbin/shutdown -t1 -h now >/dev/null 2>&1 &
+	;;
+esac
